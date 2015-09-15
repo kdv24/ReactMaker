@@ -29,9 +29,11 @@ var AwesomeProject = React.createClass({
       movies: null,
     };
   },
+
   componentDidMount: function() {
     this.fetchData();
   },
+
   fetchData: function() {
     fetch(REQUEST_URL)
     .then((response) => response.json())
@@ -42,6 +44,7 @@ var AwesomeProject = React.createClass({
     })
     .done();
   },
+
   render: function() {
     if (!this.state.movies) {
       return this.renderLoadingView();
@@ -60,6 +63,7 @@ var AwesomeProject = React.createClass({
       </View>
     );
   },
+
   renderMovie: function(movie) {
     return (
       <View style={styles.container}>
@@ -96,14 +100,14 @@ var styles = StyleSheet.create({
   thumbnail: {
     width: 53,
     height: 81,
-},
+  },
   title: {
     fontSize: 20,
     marginBottom: 8,
     textAlign: 'center',
   },
   year: {
-    textAlign: 'center'
+    textAlign: 'center',
   },
 });
 
